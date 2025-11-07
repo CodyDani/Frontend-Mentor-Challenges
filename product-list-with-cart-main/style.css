@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: mainFont;
+    src: url(assets/fonts/RedHatText-VariableFont_wght.ttf),
+         url(assets/fonts/RedHatText-Italic-VariableFont_wght.ttf);
+}
+
+body{
+    font-size: 16px;
+    background: hsl(20, 50%, 98%);
+    font-family: mainfont;
+}
+
+.container {
+    width: 90%;
+    margin: 70px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dessert-container {
+    width: 70%;
+}
+
+.dessert-container h1 {
+    margin-bottom: 30px;
+    font-size: 250%;
+}
+
+.dessert-container .dessert-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.dessert-container .dessert-flex .dessert-item{}
+
+.dessert-container .dessert-flex .dessert-item .item-img{
+    position: relative;
+    /* display: inline-block; */
+    margin-bottom: 30px;
+}
+
+.dessert-container .dessert-flex .dessert-item .item-img>img{
+    /* height: 250px; */
+    width: 250px;
+    border-radius: 5px;
+}
+
+.dessert-container .dessert-flex .dessert-item .item-img button{
+    width: 150px;
+    border: 1px solid hsl(7, 20%, 60%);
+    border-radius: 40px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: hsl(14, 65%, 9%);
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    /* transform: translate(-50%, -50%); */
+}
+
+.dessert-container .dessert-flex .dessert-item .item-info{
+    line-height: 1.6;
+}
+
+.dessert-container .dessert-flex .dessert-item .item-info :nth-child(1) {
+    font-size: 14px;
+    color: hsl(7, 20%, 60%);
+    font-weight: 400;
+}
+
+.dessert-container .dessert-flex .dessert-item .item-info :nth-child(2) {
+    font-weight: 500;
+}
+
+.dessert-container .dessert-flex .dessert-item .item-info :nth-child(3) {
+    font-weight: 500;
+    color: hsl(14, 86%, 42%);
+}
+
+
+.container .cart-container {
+    background: #fff;
+    width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    align-self: flex-start;
+}
+
+.container .cart-container h2 {
+    color: hsl(14, 86%, 42%);
+}
+
+.container .cart-container .value img {
+    margin: 20px 100px;
+    text-align: center;
+}
+
+.container .cart-container p {
+    text-align: center;
+    color: hsl(12, 20%, 44%);
+    font-weight: 500;
+}
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
