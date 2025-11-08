@@ -4,6 +4,18 @@
     box-sizing: border-box;
 }
 
+:root{
+    --red: hsl(14, 86%, 42%);
+    --green: hsl(159, 69%, 38%);
+    --white: #fff;
+    --rose50: hsl(20, 50%, 98%);
+    --rose100: hsl(13, 31%, 94%);
+    --rose300: hsl(14, 25%, 72%);
+    --rose400: hsl(7, 20%, 60%);
+    --rose500: hsl(12, 20%, 44%);
+    --rose900: hsl(14, 65%, 9%);
+}
+
 @font-face {
     font-family: mainFont;
     src: url(assets/fonts/RedHatText-VariableFont_wght.ttf),
@@ -12,7 +24,7 @@
 
 body{
     font-size: 16px;
-    background: hsl(20, 50%, 98%);
+    background: var(--rose50);
     font-family: mainfont;
 }
 
@@ -55,7 +67,7 @@ body{
 
 .dessert-container .dessert-flex .dessert-item .item-img button{
     width: 150px;
-    border: 1px solid hsl(7, 20%, 60%);
+    border: 1px solid var(--rose400);
     border-radius: 40px;
     padding: 10px 20px;
     display: flex;
@@ -63,8 +75,8 @@ body{
     align-items: center;
     font-size: 14px;
     font-weight: 600;
-    color: hsl(14, 65%, 9%);
-    background: #fff;
+    color: var(--rose900);
+    background: var(--white);
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -77,7 +89,7 @@ body{
 
 .dessert-container .dessert-flex .dessert-item .item-info :nth-child(1) {
     font-size: 14px;
-    color: hsl(7, 20%, 60%);
+    color: var(--rose400);
     font-weight: 400;
 }
 
@@ -87,20 +99,18 @@ body{
 
 .dessert-container .dessert-flex .dessert-item .item-info :nth-child(3) {
     font-weight: 500;
-    color: hsl(14, 86%, 42%);
+    color: var(--red);
 }
 
         /* Cart Container Styling */
 .container .cart-container {
-    background: #fff;
     width: 30%;
     padding: 20px;
-    border-radius: 10px;
     align-self: flex-start;
 }
 
 .container .cart-container h2 {
-    color: hsl(14, 86%, 42%);
+    color: var(--red);
 }
 
 .container .cart-container .value img {
@@ -110,18 +120,100 @@ body{
 
 .container .cart-container p {
     text-align: center;
-    color: hsl(12, 20%, 44%);
+    color: var(--rose500);
     font-weight: 500;
+}
+
+.cart-container .each-order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rose50);
+}
+
+.cart-container .each-order img {
+    border: 1px solid var(--rose300);
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.cart-container .each-order .detail-text{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cart-container .each-order .detail-text p{
+    text-align: start;
+    color: var(--rose900);
+    font-weight: 500;
+}
+
+.cart-container .each-order .detail-text .quantity-price {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cart-container .each-order .detail-text .quantity-price :nth-child(1) {
+    color: var(--red);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.cart-container .each-order .detail-text .quantity-price :nth-child(2) {
+    color: var(--rose400);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.cart-container .each-order .detail-text .quantity-price :nth-child(3) {
+    color: var(--rose500);
+    font-weight: 500;
+}
+
+.cart-container .order-total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.cart-container .order-total>p{
+    color: var(--rose900);
+    font-weight: 400;
+}
+
+.cart-container .order-total .total-value{
+    font-size: 25px;
+    color: var(--rose900);
+    font-weight: 900;
+}
+
+.cart-container .delivery-type {
+    background: var(--rose100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.cart-container .delivery-type img{
+    padding-right: 5px;
+}
+
+.cart-container .delivery-type span{
+    font-weight: 500;
+    color: var(--rose900);
 }
 
         /* Order Confirmation Modal */
 .order-confirmation-modal {
-    background: #fff;
     width: 600px;
     margin: 0 auto;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .order-confirmation-modal img{
@@ -134,12 +226,12 @@ body{
     /* margin-bottom: 20px; */
     /* font-size: 14px; */
     line-height: 2.0;
-    color: hsl(7, 20%, 60%);
+    color: var(--rose400);
     font-weight: 500;
 }
 
 .order-confirmation-modal .all-orders {
-    background-color: hsl(13, 31%, 94%);
+    background-color: var(--rose100);
     padding: 0 25px 25px 25px;
     margin: 30px 0;
     border-radius: 10px;
@@ -153,13 +245,13 @@ body{
 }
 
 .order-confirmation-modal .all-orders .order-total>p{
-    color: hsl(14, 65%, 9%);
+    color: var(--rose900);
     font-weight: 400;
 }
 
 .order-confirmation-modal .all-orders .order-total .total-value{
     font-size: 25px;
-    color: hsl(14, 65%, 9%);
+    color: var(--rose900);
     font-weight: 900;
 }
 
@@ -168,11 +260,11 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
-    border-bottom: 1px solid hsl(20, 50%, 98%);
+    border-bottom: 1px solid var(--rose50);
 }
 
 .order-confirmation-modal .each-order .total-price {
-    color: hsl(14, 65%, 9%);
+    color: var(--rose900);
     font-weight: 500;
 }
 
@@ -200,37 +292,49 @@ body{
 
 .order-confirmation-modal .each-order .order-details .detail-text p{
     font-weight: 500;
-    color: hsl(14, 65%, 9%);
+    color: var(--rose900);
 }
 
-.order-confirmation-modal .each-order .order-details .detail-text .quantity-price{
+.order-confirmation-modal .each-order .order-details .detail-text .quantity-price {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.order-confirmation-modal .each-order .order-details .detail-text .quantity-price :nth-child(1){
-    color: hsl(14, 86%, 42%);
+.order-confirmation-modal .each-order .order-details .detail-text .quantity-price :nth-child(1) {
+    color: var(--red);
     font-weight: 500;
     font-size: 14px;
 }
 
-.order-confirmation-modal .each-order .order-details .detail-text .quantity-price :nth-child(2){
-    color: hsl(7, 20%, 60%);
+.order-confirmation-modal .each-order .order-details .detail-text .quantity-price :nth-child(2) {
+    color: var(--rose400);
     font-weight: 500;
     font-size: 14px;
 }
 
-.order-confirmation-modal button {
+.order-confirmation-modal button {}
+
+        /* Utilities */
+.confirm-btn {
     width: 100%;
     border: none;
     outline: none;
-    background-color: hsl(14, 86%, 42%);
-    color: #fff;
+    background-color: var(--red);
+    color: var(--white);
     padding: 15px 30px;
     border-radius: 40px;
     font-size: 16px;
     font-weight: 500;
+    /* margin: 20px 0; */
+}
+
+.card {
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      margin-bottom: 20px;
 }
 
         /* Attribution */
