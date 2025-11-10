@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    position: relative;
 }
 
 :root{
@@ -232,6 +233,31 @@ body{
 }
 
         /* Order Confirmation Modal */
+.modal {
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+
+.modal:hover {
+    cursor: zoom-out;
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
 .order-confirmation-modal {
     width: 40%;
     margin: 0 auto;
@@ -401,6 +427,5 @@ body{
     width: 100%;
     margin: 0 auto 40px;
 }
-
 
 }
