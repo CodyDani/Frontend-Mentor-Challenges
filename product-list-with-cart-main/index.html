@@ -15,12 +15,12 @@
   <div class="container">
 
               <!-- Dessert Container Structure -->
-    <div class="dessert-container">
+    <!-- <div class="dessert-container">
           <h1>Desserts</h1>
           <div class="dessert-flex">
     
             <div class="dessert-item">
-              <div class="item-img">
+              <div class="dessert-action">
                 <img src="assets/images/image-waffle-desktop.jpg">
                 <button class="add-cart-btn"><img src="assets/images/icon-add-to-cart.svg">Add to Cart</button>
               </div>
@@ -32,12 +32,12 @@
             </div>
             
             <div class="dessert-item">
-              <div class="item-img">
+              <div class="dessert-action">
                 <img src="assets/images/image-creme-brulee-desktop.jpg">
-                <div class="quantityBtn add-cart-btn">
-                  <img src="assets/images/icon-decrement-quantity.svg" alt="">
-                  <span class="quantity">1</span>
-                  <img src="assets/images/icon-increment-quantity.svg" alt="">
+                <div class="quantity-control add-cart-btn">
+                  <img src="assets/images/icon-decrement-quantity.svg" alt="" class="decrement">
+                  <span class="quantity-value">1</span>
+                  <img src="assets/images/icon-increment-quantity.svg" alt="" class="increment">
                 </div>
               </div>
               <div class="item-info">
@@ -48,7 +48,7 @@
             </div>
     
             <div class="dessert-item">
-              <div class="item-img">
+              <div class="dessert-action">
                 <img src="assets/images/image-macaron-desktop.jpg">
                 <button class="add-cart-btn"><img src="assets/images/icon-add-to-cart.svg">Add to Cart</button>
               </div>
@@ -132,15 +132,15 @@
             </div>
     
           </div>
-    </div>
+    </div> -->
   
             <!-- Cart Container Structure -->
-    <div class="cart-container card">
+    <!-- <div class="cart-container card">
         <h2>Your Cart (0)</h2>
-        <!-- <div class="value">
+        <div class="value">
           <img src="assets/images/illustration-empty-cart.svg">
           <p>Your added items will appear here</p>
-        </div> -->
+        </div>
 
          <div class="each-order">
           <div class="detail-text">
@@ -165,76 +165,79 @@
 
         <button class="confirm-btn"> Confirm Order</button>
 
-    </div>
+    </div>  -->
       
   </div>
 
             <!-- Order Confirmation Modal Structure -->
-  <div class="modal">
-    <div class="order-confirmation-modal card">
-        <img src="assets/images/icon-order-confirmed.svg" alt="">
-        <h1>Order Confirmed</h1>
-        <p>We hope you enjoy your food!</p>
-  
-        <div class="all-orders">
-  
-          <div class="each-order">
-            <div class="order-details">
-              <div class="order-thumbnail">
-                <img src="assets/images/image-tiramisu-thumbnail.jpg" alt="">
-              </div>
-              <div class="detail-text">
-                <p>Classic Tiramisu</p>
-                <div class="quantity-price">
-                  <span>1x</span>
-                  <span>@$5.50</span>
+  <div class="modal-house">
+
+    <!--<div class="modal show">
+      <div class="order-confirmation-modal card">
+          <img src="assets/images/icon-order-confirmed.svg" alt="">
+          <h1>Order Confirmed</h1>
+          <p>We hope you enjoy your food!</p>
+    
+          <div class="all-orders">
+    
+            <div class="each-order">
+              <div class="order-details">
+                <div class="order-thumbnail">
+                  <img src="assets/images/image-tiramisu-thumbnail.jpg" alt="">
+                </div>
+                <div class="detail-text">
+                  <p>Classic Tiramisu</p>
+                  <div class="quantity-price">
+                    <span>1x</span>
+                    <span>@$5.50</span>
+                  </div>
                 </div>
               </div>
+              <div class="total-price">$5.50</div>
             </div>
-            <div class="total-price">$5.50</div>
-          </div>
-  
-          <div class="each-order">
-            <div class="order-details">
-              <div class="order-thumbnail">
-                <img src="assets/images/image-creme-brulee-thumbnail.jpg" alt="">
-              </div>
-              <div class="detail-text">
-                <p>Vanilla Bean Crème Brûlée</p>
-                <div class="quantity-price">
-                  <span>4x</span>
-                  <span>@$7.00</span>
+    
+            <div class="each-order">
+              <div class="order-details">
+                <div class="order-thumbnail">
+                  <img src="assets/images/image-creme-brulee-thumbnail.jpg" alt="">
+                </div>
+                <div class="detail-text">
+                  <p>Vanilla Bean Crème Brûlée</p>
+                  <div class="quantity-price">
+                    <span>4x</span>
+                    <span>@$7.00</span>
+                  </div>
                 </div>
               </div>
+              <div class="total-price">$28.00</div>
             </div>
-            <div class="total-price">$28.00</div>
-          </div>
-  
-          <div class="each-order">
-            <div class="order-details">
-              <div class="order-thumbnail">
-                <img src="assets/images/image-panna-cotta-thumbnail.jpg" alt="">
-              </div>
-              <div class="detail-text">
-                <p>Vanilla Panna Cotta</p>
-                <div class="quantity-price">
-                  <span>2x</span>
-                  <span>@$6.50</span>
+    
+            <div class="each-order">
+              <div class="order-details">
+                <div class="order-thumbnail">
+                  <img src="assets/images/image-panna-cotta-thumbnail.jpg" alt="">
+                </div>
+                <div class="detail-text">
+                  <p>Vanilla Panna Cotta</p>
+                  <div class="quantity-price">
+                    <span>2x</span>
+                    <span>@$6.50</span>
+                  </div>
                 </div>
               </div>
+              <div class="total-price">$13.00</div>
             </div>
-            <div class="total-price">$13.00</div>
+    
+            <div class="order-total">
+              <p>Order Total</p>
+              <p class="total-value">$46.50</p>
+            </div>
+    
           </div>
-  
-          <div class="order-total">
-            <p>Order Total</p>
-            <p class="total-value">$46.50</p>
-          </div>
-  
-        </div>
-  
-        <button class="confirm-btn"> Start New Order</button>
-    </div>
+    
+          <button class="confirm-btn"> Start New Order</button>
+      </div>
+    </div>-->
   </div>
   
           <!-- Attribution -->
@@ -243,6 +246,6 @@
     Coded by <a href="#">Daniel Agada Alfred</a>.
   </div>
 
-  <script src="script.js"></script>
+  <script src="newScript.js"></script>
 </body>
 </html>
