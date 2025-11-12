@@ -285,7 +285,7 @@ function updateCartDisplay() {
     span2.textContent = `@$${item.price}`;
 
     const span3 = document.createElement("span");
-    span3.textContent = `₦${item.price * item.quantity}`;
+    span3.textContent = `$${item.price * item.quantity}`;
 
     cartContainer.appendChild(eachOrder);
     eachOrder.append(detailText, removeImg);
@@ -381,7 +381,7 @@ function showOrderConfirmed() {
       confirmSpan1.textContent = `x${item.quantity}`;
     
       const confirmSpan2 = document.createElement("span");
-      confirmSpan2.textContent = `${item.price}`;
+      confirmSpan2.textContent = `$${item.price}`;
 
       confirmedQuantityPrice.append(confirmSpan1, confirmSpan2);
       detailText.append(thumbnailPara, confirmedQuantityPrice);
