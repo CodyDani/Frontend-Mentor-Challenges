@@ -222,8 +222,6 @@ function resetAllDessertActions() {
 
     actionDiv.append(img, button);
 
-    highlightSelectedImage(dessertObj.name)
-
     img.addEventListener('click', () => {
       resetAllDessertActions();
       showQuantityControl(dessertObj);
