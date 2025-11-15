@@ -445,10 +445,11 @@ function showOrderConfirmed() {
         newOrderBtn.textContent = "Start New Order";
         newOrderBtn.addEventListener("click", () => {
             cart = [];
-            updateCartDisplay();
-            resetDessertItemsUI();
-            modal.remove();
             saveCart()
+            updateCartDisplay();
+            resetAllDessertActions();
+            highlightSelectedImage();
+            modal.remove();
             
         });
         
