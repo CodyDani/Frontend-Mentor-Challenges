@@ -244,29 +244,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.3s ease-in-out; */
 }
 
-/* .modal:hover {
-    cursor: zoom-out;
-}
-
-.modal.show {
-    visibility: visible;
-    opacity: 1;
-} */
 
 .order-confirmation-modal {
     width: 40%;
     margin: 0 auto;
-
     background: #fff;
     border-radius: 1rem;
     padding: 2rem;
     max-width: 40%;
-    /* width: 90%; */
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
     animation: fadeInUp 0.3s ease-in-out;
 }
@@ -411,6 +398,11 @@ body{
     transform: translate(-50%, 50%);
 }
 
+.selected-img {
+  border: 1px solid var(--red);
+}
+
+
 
         /* Attribution */
 .attribution { font-size: 11px; text-align: center; }
@@ -444,10 +436,9 @@ body{
 }
 
 @media (max-width: 768px) {
-  /* Override modal to become a bottom sheet */
   .modal {
-    align-items: flex-end; /* Push it to the bottom */
-    background: transparent; /* Remove dark overlay */
+    align-items: flex-end;
+    background: transparent;
   }
 
   .order-confirmation-modal {
@@ -469,18 +460,5 @@ body{
       transform: translateY(0);
       opacity: 1;
     }
-  }
-}
-
-
-
-@keyframes fadeInUp {
-  from {
-    transform: translateY(40px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
   }
 }
