@@ -30,53 +30,57 @@
     <section class="todo-container">
       <div class="header">
         <h1>Todo</h1>
-        <img src="images/icon-sun.svg" alt="" />
+        <img src="images/icon-moon.svg" alt="dark-theme" id="color-theme" />
       </div>
 
       <div class="input">
         <button class="submit-list"></button>
-        <input type="text" class="user-input" />
+        <input
+          type="text"
+          class="user-input"
+          placeholder="Create a new to-do"
+        />
       </div>
 
       <ul class="main">
         <li>
-          <div class="check-list">
-            <img src="images/icon-check.svg" alt="" class="checked" />
+          <div class="check-list checked">
+            <img src="images/icon-check.svg" alt="" />
             <span>Complete online JavaScript course</span>
           </div>
           <img src="images/icon-cross.svg" alt="" />
         </li>
         <li>
-          <div class="check-list">
-            <button class="unchecked"></button>
+          <div class="check-list unchecked">
+            <button></button>
             <span>Jog around the park 3x</span>
           </div>
           <img src="images/icon-cross.svg" alt="" />
         </li>
         <li>
-          <div class="check-list">
-            <button class="unchecked"></button>
+          <div class="check-list unchecked">
+            <button></button>
             <span>10 minutes meditation</span>
           </div>
           <img src="images/icon-cross.svg" alt="" />
         </li>
         <li>
-          <div class="check-list">
-            <button class="unchecked"></button>
+          <div class="check-list unchecked">
+            <button></button>
             <span>Read for 1 hour</span>
           </div>
           <img src="images/icon-cross.svg" alt="" />
         </li>
         <li>
-          <div class="check-list">
-            <button class="unchecked"></button>
+          <div class="check-list unchecked">
+            <button></button>
             <span>Pick up groceries</span>
           </div>
           <img src="images/icon-cross.svg" alt="" />
         </li>
         <li>
-          <div class="check-list">
-            <button class="unchecked"></button>
+          <div class="check-list unchecked">
+            <button></button>
             <span>Complete To-Do App on Frontend Mentor</span>
           </div>
           <img src="images/icon-cross.svg" alt="" />
@@ -92,6 +96,12 @@
           <a href="#">Clear Completed</a>
         </div>
       </ul>
+
+      <span class="mobile-state">
+        <a href="#">All</a>
+        <a href="#">Active</a>
+        <a href="#">Completed</a>
+      </span>
 
       <p class="footer-info">Drag and drop to reorder list</p>
     </section>
