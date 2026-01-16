@@ -85,6 +85,8 @@ function displayTodos() {
     listDiv.addEventListener("click", () => {
       toggleTodos(todo.id);
     });
+
+    cancelBtn.addEventListener("click", () => cancelListBtn(todo.id));
   });
 
   renderFooter(ulMain);
@@ -191,5 +193,14 @@ function activeStateTodos() {
 //Utility function for displaying only completed lists
 function completedStateTodos() {
   currentSorting = "completed";
+  displayTodos();
+}
+
+//Utility function for cancelling each list
+function cancelListBtn(id) {
+  todos = todos.filter((todo) => {
+    if (todo.id === id) return;
+    return todo.id !== id;
+  });
   displayTodos();
 }
