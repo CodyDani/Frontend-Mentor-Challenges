@@ -131,10 +131,23 @@ button {
   cursor: pointer;
 }
 
+.todo-container .main li.dragging {
+  opacity: 0.5;
+  background-color: #e0e0e0;
+}
+
 .todo-container .main li .check-list {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.todo-container .main li img {
+  visibility: hidden;
+}
+
+.todo-container .main li:hover img {
+  visibility: visible;
 }
 
 .todo-container .main li button {
@@ -259,6 +272,10 @@ button {
   .todo-container .main {
     margin-bottom: 20px;
     font-weight: 600;
+  }
+
+  .todo-container .main li img {
+    visibility: visible;
   }
 
   .mobile-state {

@@ -4,7 +4,7 @@ const submitBtnEl = document.querySelector(".submit-list");
 const userInputEl = document.querySelector(".user-input");
 
 //Array of all list items
-let todos = [];
+let todos = loadTodos();
 let currentSorting = "all";
 
 //Color theme toggling functionality
@@ -42,6 +42,7 @@ submitBtnEl.addEventListener("click", () => {
     text: userListItem,
     completed: false,
   });
+  saveList();
   userInputEl.value = "";
   displayTodos();
 });
@@ -85,6 +86,7 @@ function displayTodos() {
 
     listDiv.addEventListener("click", () => {
       toggleTodos(todo.id);
+      saveList();
     });
 
     cancelBtn.addEventListener("click", () => cancelListBtn(todo.id));
@@ -147,6 +149,7 @@ function renderFooter(parent) {
   clearCompleted.addEventListener("click", (e) => {
     e.preventDefault();
     clearCompletedTodos();
+    saveList();
   });
   allState.addEventListener("click", (e) => {
     e.preventDefault();
@@ -209,5 +212,21 @@ function cancelListBtn(id) {
     if (todo.id === id) return;
     return todo.id !== id;
   });
+  saveList();
   displayTodos();
 }
+
+//Utility function for persisting in browser
+function saveList() {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function loadTodos() {
+  const storedTodos = localStorage.getItem("todos");
+  if (storedTodos) {
+    return JSON.parse(storedTodos);
+  }
+  return [];
+}
+
+window.addEventListener("DOMContentLoaded", displayTodos());
