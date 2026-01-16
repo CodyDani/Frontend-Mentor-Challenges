@@ -49,6 +49,7 @@ submitBtnEl.addEventListener("click", () => {
 //Displaying all todos
 function displayTodos() {
   //   todos.innerHTML = [];
+
   const ulMain = document.querySelector(".main");
   ulMain.innerHTML = "";
 
@@ -89,7 +90,9 @@ function displayTodos() {
     cancelBtn.addEventListener("click", () => cancelListBtn(todo.id));
   });
 
-  renderFooter(ulMain);
+  if (sortedTodos.length >= 1) {
+    renderFooter(ulMain);
+  }
 }
 
 //list information display
