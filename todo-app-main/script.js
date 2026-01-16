@@ -90,7 +90,7 @@ function displayTodos() {
     cancelBtn.addEventListener("click", () => cancelListBtn(todo.id));
   });
 
-  if (sortedTodos.length >= 1) {
+  if (todos.length >= 1) {
     renderFooter(ulMain);
   }
 }
@@ -136,8 +136,12 @@ function renderFooter(parent) {
 
   if (!hasCompleted) {
     clearCompleted.style.display = "none";
+    completedState.style.display = "none";
+    activeState.style.display = "none";
   } else {
     clearCompleted.style.display = "block";
+    completedState.style.display = "block";
+    activeState.style.display = "block";
   }
 
   clearCompleted.addEventListener("click", (e) => {
