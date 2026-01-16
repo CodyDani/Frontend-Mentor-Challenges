@@ -48,6 +48,14 @@ a {
   text-decoration: none;
 }
 
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 .todo-container {
   display: flex;
   flex-direction: column;
@@ -129,18 +137,7 @@ a {
   gap: 20px;
 }
 
-.todo-container .main li .checked img {
-  background: var(--gradient);
-  border-radius: 50%;
-  padding: 7px;
-}
-
-.todo-container .main li .checked span {
-  text-decoration: line-through;
-  color: var(--border-color);
-}
-
-.todo-container .main li .unchecked button {
+.todo-container .main li button {
   border: 1px solid var(--border-color);
   border-radius: 50%;
   height: 25px;
@@ -148,8 +145,20 @@ a {
   background: transparent;
 }
 
-.todo-container .main li .unchecked button:hover {
+.todo-container .main li button:hover {
   border: 1px solid hsl(280, 87%, 65%);
+}
+
+.todo-container .main li .check-list.checked button {
+  background: url("images/icon-check.svg") no-repeat center, var(--gradient);
+  background-size: 15px, cover;
+  border-radius: 50%;
+  padding: 7px;
+}
+
+.todo-container .main li .check-list.checked span {
+  text-decoration: line-through;
+  color: var(--border-color);
 }
 
 .todo-container .main-footer {
@@ -161,11 +170,11 @@ a {
   color: var(--footer-primary);
 }
 
-.todo-container .main-footer a {
+.todo-container .main-footer button {
   color: var(--footer-primary);
 }
 
-.todo-container .main-footer a:hover {
+.todo-container .main-footer button:hover {
   color: var(--footer-secondary);
 }
 
@@ -177,7 +186,7 @@ a {
   gap: 10px;
 }
 
-.todo-container .main-footer .state a:active {
+.todo-container .main-footer .state button.active {
   color: hsl(220, 98%, 61%);
 }
 
@@ -202,16 +211,21 @@ a {
   font-weight: 700;
 }
 
-.mobile-state a {
+.mobile-state button {
   color: var(--footer-primary);
 }
 
-.mobile-state a:hover {
+.mobile-state button:hover {
   color: var(--footer-secondary);
 }
 
-.mobile-state a:active {
+.mobile-state button:active {
   color: hsl(220, 98%, 61%);
+}
+
+.active {
+  color: hsl(220, 98%, 61%);
+  font-size: 40px;
 }
 
 @media (max-width: 375px) {
@@ -251,7 +265,7 @@ a {
     display: flex;
   }
 
-  .mobile-state a {
+  .mobile-state button {
     font-size: 14px;
   }
 
