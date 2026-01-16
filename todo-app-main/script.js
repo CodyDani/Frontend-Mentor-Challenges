@@ -117,15 +117,15 @@ function renderFooter(parent) {
   listState.classList.add("state");
 
   const allState = document.createElement("button");
-  allState.classList.add("all-state");
+  allState.classList.toggle("active", currentSorting === "all");
   allState.textContent = "All";
 
   const activeState = document.createElement("button");
-  activeState.classList.add("active-state");
+  activeState.classList.toggle("active", currentSorting === "active");
   activeState.textContent = "Active";
 
   const completedState = document.createElement("button");
-  completedState.classList.add("completed-state");
+  completedState.classList.toggle("active", currentSorting === "completed");
   completedState.textContent = "Completed";
 
   const clearCompleted = document.createElement("button");
@@ -153,17 +153,14 @@ function renderFooter(parent) {
   });
   allState.addEventListener("click", (e) => {
     e.preventDefault();
-    allState.classList.toggle("active", currentSorting === "all");
     allStateTodos();
   });
   activeState.addEventListener("click", (e) => {
     e.preventDefault();
-    activeState.classList.toggle("active", currentSorting === "active");
     activeStateTodos();
   });
   completedState.addEventListener("click", (e) => {
     e.preventDefault();
-    completedState.classList.toggle("active", currentSorting === "completed");
     completedStateTodos();
   });
 }
