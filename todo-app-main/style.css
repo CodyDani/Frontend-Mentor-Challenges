@@ -134,6 +134,7 @@ button {
 .todo-container .main li.dragging {
   opacity: 0.5;
   background-color: #e0e0e0;
+  border: 2px dashed #3a7cfd;
 }
 
 .todo-container .main li .check-list {
@@ -167,6 +168,10 @@ button {
   background-size: 15px, cover;
   border-radius: 50%;
   padding: 7px;
+}
+
+.todo-container .main li .check-list span {
+  cursor: grab;
 }
 
 .todo-container .main li .check-list.checked span {
@@ -241,14 +246,14 @@ button {
 }
 
 @media (max-width: 375px) {
-  /* mobile dark mode root */
-  :root {
-    --background-image: url("images/bg-mobile-dark.jpg");
-  }
-
   /* mobile light mode root */
   :root {
     --background-image: url("images/bg-mobile-light.jpg");
+  }
+
+  /* mobile dark mode root */
+  [data-theme="dark"] {
+    --background-image: url("images/bg-mobile-dark.jpg");
   }
 
   * {
