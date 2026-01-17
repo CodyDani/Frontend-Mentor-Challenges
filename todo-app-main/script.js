@@ -94,6 +94,7 @@ function displayTodos() {
 
   if (todos.length >= 1) {
     renderFooter(ulMain);
+    renderMobileFooter();
   }
 }
 
@@ -160,6 +161,45 @@ function renderFooter(parent) {
     activeStateTodos();
   });
   completedState.addEventListener("click", (e) => {
+    e.preventDefault();
+    completedStateTodos();
+  });
+}
+
+function renderMobileFooter() {
+  const mobileStateDiv = document.querySelector(".mobile-state-div");
+  mobileStateDiv.innerHTML = "";
+
+  const mobileState = document.createElement("span");
+  mobileState.classList.add("mobile-state");
+
+  const mobileAllState = document.createElement("button");
+  mobileAllState.classList.toggle("active", currentSorting === "all");
+  mobileAllState.textContent = "All";
+
+  const mobileActiveState = document.createElement("button");
+  mobileActiveState.classList.toggle("active", currentSorting === "active");
+  mobileActiveState.textContent = "Active";
+
+  const mobileCompletedState = document.createElement("button");
+  mobileCompletedState.classList.toggle(
+    "active",
+    currentSorting === "completed"
+  );
+  mobileCompletedState.textContent = "Completed";
+
+  mobileState.append(mobileAllState, mobileActiveState, mobileCompletedState);
+  mobileStateDiv.appendChild(mobileState);
+
+  mobileAllState.addEventListener("click", (e) => {
+    e.preventDefault();
+    allStateTodos();
+  });
+  mobileActiveState.addEventListener("click", (e) => {
+    e.preventDefault();
+    activeStateTodos();
+  });
+  mobileCompletedState.addEventListener("click", (e) => {
     e.preventDefault();
     completedStateTodos();
   });

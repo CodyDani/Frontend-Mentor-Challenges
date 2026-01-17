@@ -214,8 +214,13 @@ button {
   color: var(--footer-primary);
 }
 
-.mobile-state {
+.mobile-state-div {
   display: none;
+  width: 100%;
+}
+
+.mobile-state {
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -280,6 +285,10 @@ button {
 
   .todo-container .main li img {
     visibility: visible;
+  }
+
+  .mobile-state-div {
+    display: flex;
   }
 
   .mobile-state {
