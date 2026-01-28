@@ -1,7 +1,24 @@
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+// import {
+//   getDatabase,
+//   ref,
+// } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-database.js";
+
 //Grabbing all elements
 const colorThemeEl = document.getElementById("color-theme");
 const submitBtnEl = document.querySelector(".submit-list");
 const userInputEl = document.querySelector(".user-input");
+
+// //App's Firebase configuration
+// const firebaseConfig = {
+//   databaseURL:
+//     "https://check-todo-list-79160-default-rtdb.europe-west1.firebasedatabase.app/",
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const database = getDatabase(app);
+// const referenceInDB = ref(database, "todos");
 
 //Array of all list items
 let todos = loadTodos();
@@ -184,7 +201,7 @@ function renderMobileFooter() {
   const mobileCompletedState = document.createElement("button");
   mobileCompletedState.classList.toggle(
     "active",
-    currentSorting === "completed"
+    currentSorting === "completed",
   );
   mobileCompletedState.textContent = "Completed";
 
