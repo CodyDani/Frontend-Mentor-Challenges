@@ -51,19 +51,39 @@ body {
   color: hsl(7, 71%, 60%);
 }
 
+.error {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+.error > span {
+  color: hsl(7, 71%, 60%);
+  font-size: 12px;
+}
+
+.error > img {
+  width: 10px;
+  color: hsl(7, 71%, 60%);
+}
+
 .container > .logo {
   width: 140px;
 }
 
-.container .heading {
+.container .heading,
+.container .ticket-heading {
   font-size: 25px;
   width: 90%;
 }
 
-.container .description {
+.container .description,
+.container .ticket-description {
   font-size: 14px;
   line-height: 1.4;
   width: 75%;
+  color: hsl(245, 15%, 58%);
 }
 
 .container .ticket-form {
@@ -123,7 +143,7 @@ input::placeholder {
 }
 
 .container .ticket-form .avatar-upload .drop-zone {
-  width: 300px;
+  min-width: 300px;
   min-height: 100px;
   border: 1px dashed #ccc;
   padding: 10px;
@@ -180,7 +200,7 @@ input::placeholder {
   min-width: 200px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 
   position: absolute;
   top: 20px;
@@ -206,7 +226,7 @@ input::placeholder {
   color: hsl(252, 6%, 83%);
 
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 15px;
 }
 
@@ -242,5 +262,43 @@ input::placeholder {
   font-weight: bold;
 }
 
-@media screen {
+@media (min-width: 768px) {
+  .container {
+    background:
+      url("../assets/images/pattern-lines.svg") top left no-repeat,
+      url("../assets/images/pattern-squiggly-line-top.svg") top right / 500px
+        200px no-repeat,
+      url("../assets/images/pattern-circle.svg") 150% center no-repeat,
+      url("../assets/images/pattern-squiggly-line-bottom-desktop.svg") left
+        bottom / auto no-repeat,
+      url("../assets/images/background-desktop.png") center center / cover
+        no-repeat;
+    padding-bottom: 0;
+  }
+
+  .container .heading {
+    font-size: 50px;
+    width: 60%;
+  }
+
+  .container .description {
+    font-size: 16px;
+    line-height: 1.4;
+    width: 70%;
+  }
+
+  .container .ticket-heading {
+    font-size: 50px;
+    width: 55%;
+  }
+
+  .container .ticket-description {
+    font-size: 18px;
+    line-height: 1.4;
+    width: 30%;
+  }
+
+  .container .ticket-form {
+    min-width: 350px;
+  }
 }
