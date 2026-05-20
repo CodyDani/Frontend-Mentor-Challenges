@@ -11,32 +11,64 @@
       <img src="../assets/images/logo-full.svg" alt="logo" class="logo" />
 
       <h3 class="heading">Your Journey to Coding Conf 2026 Starts Here!</h3>
-      <!-- <h3 class="ticket-heading">
+      <h3 class="ticket-heading hidden">
         Congrats, <span class="ticket-name">Jonatan Kristof</span>! Your ticket
         is ready.
-      </h3> -->
+      </h3>
 
       <p class="description">
         Secure your spot at next year's biggest coding conference
       </p>
-      <!-- <p class="ticket-description">
+      <p class="ticket-description hidden">
         We've emailed your ticket to
         <span class="ticket-email">jonatan@email.com</span> and will send
         updates in the run up to the event.
-      </p> -->
+      </p>
 
-      <form action="" id="ticket-form" class="ticket-form">
+      <form
+        action="/submit-ticket"
+        id="ticket-form"
+        class="ticket-form"
+        enctype="multipart/form-data"
+      >
         <div class="input">
           <label for="avatar">Upload Avatar</label>
           <div class="avatar-upload">
-            <div class="drop-zone">
-              <img src="../assets/images/icon-upload.svg" alt="upload-icon" />
-              <!-- <img src="../assets/images/image-avatar.jpg" alt="upload-icon" /> -->
-              <span>Drag and drop or click to upload</span>
-              <!-- <div>
-                <button>Remove Image</button>
-                <button>Change Image</button>
-              </div> -->
+            <div class="drop-zone" id="drop-zone">
+              <input
+                type="file"
+                id="fileInput"
+                name="profilePhoto"
+                accept="image/*"
+                hidden
+              />
+              <div class="upload-icon-wrapper">
+                <img
+                  src="../assets/images/icon-upload.svg"
+                  alt="upload-icon"
+                  id="upload-icon"
+                />
+                <img
+                  id="previewImage"
+                  class="preview-img hidden"
+                  src="../assets/images/image-avatar.jpg"
+                  alt="Preview"
+                />
+              </div>
+
+              <div class="uploadActions">
+                <span class="upload-text"
+                  >Drag and drop or click to upload</span
+                >
+                <div class="button-group hidden" id="btnGroup">
+                  <button type="button" class="btn btn-change" id="changeBtn">
+                    Change Photo
+                  </button>
+                  <button type="button" class="btn btn-remove" id="removeBtn">
+                    Remove Photo
+                  </button>
+                </div>
+              </div>
             </div>
             <p>
               <span
@@ -68,7 +100,7 @@
             placeholder="example@email.com"
             required
           />
-          <p class="error">
+          <p class="error hidden" id="emailError">
             <img src="../assets/images/icon-info.svg" alt="info" />
             <span>Please enter a valid email address</span>
           </p>
@@ -85,9 +117,10 @@
           />
         </div>
 
-        <button class="generate">Generate My Ticket</button>
+        <button type="submit" class="generate">Generate My Ticket</button>
       </form>
-      <!-- <div class="ticket-div">
+
+      <div class="ticket-card hidden" id="ticket-card">
         <img
           src="../assets/images/pattern-ticket.svg"
           alt="ticket"
@@ -100,20 +133,24 @@
         </div>
 
         <div class="ticket-details-two">
-          <img src="../assets/images/image-avatar.jpg" alt="avatar-mark" />
+          <img
+            src="../assets/images/image-avatar.jpg"
+            alt="avatar-mark"
+            id="participant-img"
+          />
           <div>
             <p class="participant">Jonatan Kristof</p>
             <p class="participant-github">
-              <img
-                src="../assets/images/icon-github.svg"
-                alt="github-icon"
-              />@jonatankristof0101
+              <img src="../assets/images/icon-github.svg" alt="github-icon" />
+              <span>@jonatankristof0101</span>
             </p>
           </div>
         </div>
 
-        <p class="ticket-id">#01609</p>
-      </div> -->
+        <p class="ticket-id" id="ticket-id">#01609</p>
+      </div>
     </div>
+
+    <script src="../js/script.js"></script>
   </body>
 </html>

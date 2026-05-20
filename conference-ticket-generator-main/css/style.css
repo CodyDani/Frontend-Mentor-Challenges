@@ -68,6 +68,10 @@ body {
   color: hsl(7, 71%, 60%);
 }
 
+.hidden {
+  display: none !important;
+}
+
 .container > .logo {
   width: 140px;
 }
@@ -127,6 +131,11 @@ input::placeholder {
   color: #fff;
 }
 
+.container .ticket-form .input input[type="text"]:hover,
+.container .ticket-form .input input[type="email"]:hover {
+  background-color: hsl(245, 15%, 58%);
+}
+
 .container .ticket-form .input > label {
   align-self: flex-start;
 }
@@ -155,25 +164,30 @@ input::placeholder {
   background-color: hsl(245, 19%, 35%);
   border-radius: 10px;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 
-.container .ticket-form .avatar-upload .drop-zone > img {
+.container .ticket-form .avatar-upload .drop-zone:hover {
+  background-color: hsl(245, 15%, 58%);
+}
+
+.container .ticket-form .avatar-upload .drop-zone .upload-icon-wrapper img {
   width: 40px;
   background-color: transparent;
   box-shadow: 0 0 2px #fff;
   border-radius: 5px;
 }
 
-.container .ticket-form .avatar-upload .drop-zone > span {
+.container .ticket-form .avatar-upload .drop-zone .upload-text {
   font-size: 12px;
 }
 
-.container .ticket-form .avatar-upload .drop-zone > div {
+.container .ticket-form .avatar-upload .drop-zone .uploadActions {
   display: flex;
   gap: 10px;
 }
 
-.container .ticket-form .avatar-upload .drop-zone > div button {
+.container .ticket-form .avatar-upload .drop-zone .uploadActions button {
   border: none;
   outline: none;
   color: #fff;
@@ -184,7 +198,7 @@ input::placeholder {
   padding: 5px 10px;
 }
 
-.ticket-div {
+.ticket-card {
   position: relative;
   margin-top: 20px;
   height: 160px;
@@ -203,17 +217,17 @@ input::placeholder {
   gap: 5px;
 
   position: absolute;
-  top: 20px;
+  top: 25px;
   left: 15px;
 }
 
 .ticket-details-one > img {
-  width: 150px;
+  width: 200px;
 }
 
 .ticket-details-one > p {
-  padding-left: 35px;
-  font-size: 9px;
+  padding-left: 45px;
+  font-size: 11px;
   letter-spacing: 2px;
   color: hsl(252, 6%, 83%);
 }
@@ -231,7 +245,7 @@ input::placeholder {
 }
 
 .ticket-details-two > img {
-  width: 40px;
+  width: 50px;
   border-radius: 5px;
 }
 
@@ -239,13 +253,17 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 5px;
+  gap: 10px;
+}
+
+.ticket-details-two > div > .participant {
+  font-size: 18px;
 }
 
 .ticket-details-two > div > .participant-github {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 5px;
   font-size: 11px;
 }
 
