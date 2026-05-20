@@ -51,14 +51,14 @@ body {
   color: hsl(7, 71%, 60%);
 }
 
-.error {
+.error-el {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 5px;
 }
 
-.error > span {
+.error {
   color: hsl(7, 71%, 60%);
   font-size: 12px;
 }

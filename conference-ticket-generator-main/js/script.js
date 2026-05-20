@@ -19,10 +19,39 @@ const description = document.querySelector(".description");
 const ticketDescription = document.querySelector(".ticket-description");
 const ticketEmail = document.querySelector(".ticket-email");
 
+const iconInfo = document.querySelector(".icon-info");
+const fileError = document.getElementById("file-error");
+const errorEl = document.querySelector(".error-el");
+
 ticketForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  const formData = new FormData(ticketForm);
+  const email = formData.get("email");
 
-  const formData = new FormData();
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    errorEl.classList.remove("hidden");
+    return;
+  }
+
+  const profilePhoto = formData.get("avatar");
+  const MAX_SIZE = 500 * 1024;
+
+  if (!profilePhoto || profilePhoto.size === 0) {
+    fileError.textContent = "Please upload a photo.";
+    iconInfo.classList.add("hidden");
+    fileError.classList.remove("hidden");
+    return;
+  }
+
+  if (profilePhoto && profilePhoto.size > MAX_SIZE) {
+    iconInfo.classList.add("hidden");
+    fileError.classList.remove("hidden");
+    return;
+  }
+
+  fileError.classList.add("hidden");
+  errorEl.classList.add("hidden");
   displayTicket(formData);
 });
 

@@ -38,9 +38,10 @@
               <input
                 type="file"
                 id="fileInput"
-                name="profilePhoto"
+                name="avatar"
                 accept="image/*"
                 hidden
+                required
               />
               <div class="upload-icon-wrapper">
                 <img
@@ -71,11 +72,13 @@
               </div>
             </div>
             <p>
-              <span
-                ><img
-                  src="../assets/images/icon-info.svg"
-                  alt="icon-info" /></span
-              >Upload your photo (JPG or PNG, max size: 500kb)
+              <img src="../assets/images/icon-info.svg" alt="icon-info" />
+              <span class="icon-info"
+                >Upload your photo (JPG or PNG, max size: 500kb)</span
+              >
+              <span class="error hidden" id="file-error"
+                >File too large. Please upload a photo under 500KB</span
+              >
             </p>
           </div>
         </div>
@@ -94,15 +97,15 @@
         <div class="input">
           <label for="email">Email Address</label>
           <input
-            type="email"
+            type="text"
             id="email"
             name="email"
             placeholder="example@email.com"
             required
           />
-          <p class="error hidden" id="emailError">
+          <p class="error-el hidden">
             <img src="../assets/images/icon-info.svg" alt="info" />
-            <span>Please enter a valid email address</span>
+            <span class="error">Please enter a valid email address</span>
           </p>
         </div>
 
