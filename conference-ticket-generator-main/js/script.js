@@ -23,6 +23,12 @@ const iconInfo = document.querySelector(".icon-info");
 const fileError = document.getElementById("file-error");
 const errorEl = document.querySelector(".error-el");
 
+generateBtn.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    ticketForm.dispatchEvent(new Event("submit"));
+  }
+});
+
 ticketForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const formData = new FormData(ticketForm);
@@ -37,8 +43,18 @@ ticketForm.addEventListener("submit", (e) => {
   const profilePhoto = formData.get("avatar");
   const MAX_SIZE = 500 * 1024;
 
+  const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];
+
   if (!profilePhoto || profilePhoto.size === 0) {
     fileError.textContent = "Please upload a photo.";
+    iconInfo.classList.add("hidden");
+    fileError.classList.remove("hidden");
+    return;
+  }
+
+  if (!ALLOWED_TYPES.includes(profilePhoto.type)) {
+    fileError.textContent =
+      "Unsupported file type. Please upload a JPEG, PNG, or WEBP image.";
     iconInfo.classList.add("hidden");
     fileError.classList.remove("hidden");
     return;
@@ -95,17 +111,27 @@ dropZone.addEventListener("click", (e) => {
   }
 });
 
-// Drag and drop visual highlights
-["dragenter", "dragover"].forEach((eventName) => {
-  dropZone.addEventListener(
-    eventName,
-    (e) => {
+dropZone
+  .addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
       e.preventDefault();
-      dropZone.classList.add("drag-over");
-    },
-    false,
-  );
-});
+      fileInput.click();
+    }
+  })
+
+  [
+    // Drag and drop visual highlights
+    ("dragenter", "dragover")
+  ].forEach((eventName) => {
+    dropZone.addEventListener(
+      eventName,
+      (e) => {
+        e.preventDefault();
+        dropZone.classList.add("drag-over");
+      },
+      false,
+    );
+  });
 
 ["dragleave", "drop"].forEach((eventName) => {
   dropZone.addEventListener(
