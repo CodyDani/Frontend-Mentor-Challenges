@@ -1,57 +1,182 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Typing Speed Test</title>
+    <link type="text/css" href="style.css" rel="stylesheet" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Typing Speed Test</title>
 
-  Personal best: <!-- PB --> WPM
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 0.6875rem;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="header">
+      <img src="./assets/images/logo-large.svg" alt="logo-large" />
+      <div class="best-record">
+        <img src="./assets/images/icon-personal-best.svg" alt="winner-cup" />
+        <p>Personal best: <span class="best-wpm">85</span> WPM</p>
+      </div>
+    </section>
 
-  WPM: <!-- WPM -->
-  Accuracy: <!-- Accuracy -->
-  Time: <!-- Time -->
+    <section class="main hidden">
+      <div class="test-info">
+        <div class="live-info">
+          <span class="info-title">WPM:</span>
+          <span class="wpm border">40</span>
+          <span class="info-title">Accuracy:</span>
+          <span class="accuracy border">94%</span>
+          <span class="info-title">Time:</span>
+          <span class="time">0.46</span>
+        </div>
+        <div class="live-settings">
+          <div class="setting1 border">
+            <span class="info-title">Difficulty: </span>
+            <button class="btn easy">Easy</button>
+            <button class="btn medium">Medium</button>
+            <button class="btn hard active">Hard</button>
+          </div>
 
-  Difficulty:
-  Easy
-  Medium
-  Hard
+          <div class="setting2">
+            <span class="info-title">Mode:</span>
+            <button class="btn timed active">Timed(60s)</button>
+            <button class="btn passage">Passage</button>
+          </div>
+        </div>
+      </div>
+      <div class="test-content">
+        <p class="test-text blurred">
+          The archaeological expedition unearthed artifacts that complicated
+          prevailing theories about Bronze Age trade networks. Obsidian from
+          Anatolia, lapis lazuli from Afghanistan, and amber from the Baltic—all
+          discovered in a single Mycenaean tomb—suggested commercial connections
+          far more extensive than previously hypothesized. \"We've
+          underestimated ancient peoples' navigational capabilities and their
+          appetite for luxury goods,\" the lead researcher observed.
+          \"Globalization isn't as modern as we assume.\"
+        </p>
+        <div class="start-modal">
+          <button class="btn">Start Typing Test</button>
+          <p>Or click the text and start typing</p>
+        </div>
+      </div>
+      <div class="restart-game">
+        <button class="btn game-restart">
+          <span>Restart Test</span>
+          <img src="./assets/images/icon-restart.svg" alt="restart" />
+        </button>
+      </div>
+    </section>
 
-  Mode:
-  Timed (60s)
-  Passage
+    <section class="game-complete hidden">
+      <img src="./assets/images/icon-completed.svg" alt="completed icon" />
+      <div class="baseline-message">
+        <h3>Baseline Established!</h3>
+        <p>
+          You've set the bar. Now the real challenge begins--time to beat it.
+        </p>
+      </div>
+      <div class="result-details">
+        <div>
+          <p>WPM:</p>
+          <span class="wpm"> 85</span>
+        </div>
+        <div>
+          <p>Accuracy:</p>
+          <span class="accuracy"> 90%</span>
+        </div>
+        <div>
+          <p>Characters:</p>
+          <span class="characters"> 120/ <span class="char">5</span></span>
+        </div>
+      </div>
+      <img src="./assets/images/pattern-star-1.svg" alt="star1" class="star1" />
+      <img src="./assets/images/pattern-star-2.svg" alt="star2" class="star2" />
+      <button class="btn end-restart">
+        <span>Beat This Score</span>
+        <img src="./assets/images/icon-restart.svg" alt="restart" />
+      </button>
+    </section>
 
-  <!-- Passage -->
+    <section class="game-complete hidden">
+      <img src="./assets/images/icon-new-pb.svg" alt="new-pb" />
+      <div class="baseline-message">
+        <h3>High Score Smashed!</h3>
+        <p>You're getting faster. That was incredible typing.</p>
+      </div>
+      <div class="result-details">
+        <div>
+          <p>WPM:</p>
+          <span class="wpm"> 85</span>
+        </div>
+        <div>
+          <p>Accuracy:</p>
+          <span class="accuracy"> 90%</span>
+        </div>
+        <div>
+          <p>Characters:</p>
+          <span class="characters"> 120/5</span>
+        </div>
+      </div>
+      <img
+        src="./assets/images/pattern-confetti.svg"
+        alt="confetti"
+        class="star3"
+      />
+      <button class="btn end-restart">
+        <span>Beat This Score</span>
+        <img src="./assets/images/icon-restart.svg" alt="restart" />
+      </button>
+    </section>
 
-  Start Typing Test
-  Or click the text and start typing
+    <section class="game-complete">
+      <img src="./assets/images/icon-completed.svg" alt="completed icon" />
+      <div class="baseline-message">
+        <h3>Test Complete!</h3>
+        <p>Solid run. Keep pushing to beat your high score.</p>
+      </div>
+      <div class="result-details">
+        <div>
+          <p>WPM:</p>
+          <span class="wpm"> 85</span>
+        </div>
+        <div>
+          <p>Accuracy:</p>
+          <span class="accuracy"> 90%</span>
+        </div>
+        <div>
+          <p>Characters:</p>
+          <span class="characters"> 120/ <span class="char">5</span></span>
+        </div>
+      </div>
+      <img src="./assets/images/pattern-star-1.svg" alt="star1" class="star1" />
+      <img src="./assets/images/pattern-star-2.svg" alt="star2" class="star2" />
+      <button class="btn end-restart">
+        <span>Go Again</span>
+        <img src="./assets/images/icon-restart.svg" alt="restart" />
+      </button>
+    </section>
 
-  <!-- Test Complete Start -->
-
-  Test Complete!
-  Solid run. Keep pushing to beat your high score.
-
-  WPM: <!-- WPM -->
-  Accuracy: <!-- Accuracy -->
-  Characters: <!-- Correct/Incorrect -->
-
-  Go Again
-  
-  <!-- Test Complete End -->
-
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
-</body>
+    <footer class="attribution hidden">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </footer>
+  </body>
 </html>
